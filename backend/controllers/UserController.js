@@ -1,5 +1,5 @@
-const User = require('../models/UserModel');
-const AdminUser = require('../models/AdminUserModel');
+// const User = require('../models/UserModel');
+const User = require('../models/AdminUserModel');
 // const bcrypt = require('bcryptjs');
 const UserUtil = require('../helpers/UserUtil')
 
@@ -37,6 +37,7 @@ class UserController {
             const user = await userModel.update(req.user.id, req.body)
             return res.status(200).json(user);
         }catch(err){
+            console.log(err)
             return res.status(500).json({error: 'Something went wrong'});
         }        
     }

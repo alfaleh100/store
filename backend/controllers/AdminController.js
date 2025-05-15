@@ -1,5 +1,5 @@
-const User = require('../models/UserModel');
-const AdminUser = require('../models/AdminUserModel');
+// const User = require('../models/UserModel');
+const User = require('../models/AdminUserModel');
 const bcrypt = require('bcryptjs');
 
 class AdminController {
@@ -62,16 +62,16 @@ class AdminController {
         }
     }
 
-    static async getAdminName(req, res) {
-        try {
-            const adminUserModel = new AdminUser();
-            const name = await adminUserModel.getName(req.params.id)
-            res.json({name});
-        } catch (err) {
-            console.log(err)
-            res.status(500).json({ error: 'Something went wrong' });
-        }
-    }
+    // static async getAdminName(req, res) {
+    //     try {
+    //         const adminUserModel = new AdminUser();
+    //         const name = await adminUserModel.getName(req.params.id)
+    //         res.json({name});
+    //     } catch (err) {
+    //         console.log(err)
+    //         res.status(500).json({ error: 'Something went wrong' });
+    //     }
+    // }
 }
 
 
